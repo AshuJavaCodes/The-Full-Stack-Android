@@ -41,10 +41,7 @@ public class AuthController {
         final UserDetails userDetails = userDetailsService.loadUserByUsername(authRequestBody.getUsername());
         final String jwt = jwtUtil.generateToken(userDetails);
 
-        return ResponseEntity.ok(new AuthResponse(jwt));
-
-
-
+        return ResponseEntity.ok(new AuthResponse(jwt,"Token","GEETU"));
     }
     @GetMapping("/hello")
     public ResponseEntity<String> getHello(){
